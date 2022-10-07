@@ -82,32 +82,35 @@
           </div>
         </div>
         <?php 
-          $blog_related_query = new WP_Query([
-            'post_type' => 'blog',
-            'posts_per_page' => 2,
-            'tag__in' => $tags_id,
-            'orderby' => 'rand',
-            'post__not_in' => [$id]
-          ]);
+          if ( isset($tags_id) ):
 
-          if ( $blog_related_query->have_posts() ) : ?>
+            $blog_related_query = new WP_Query([
+              'post_type' => 'blog',
+              'posts_per_page' => 2,
+              'tag__in' => $tags_id,
+              'orderby' => 'rand',
+              'post__not_in' => [$id]
+            ]);
+            
+            if ( $blog_related_query->have_posts() ) : ?>
 
-            <div class="page-article__item">
-              <section class="related-posts section">
-                <h2 class="section__title title">Похожие посты</h2>
-                <ul>
+              <div class="page-article__item">
+                <section class="related-posts section">
+                  <h2 class="section__title title">Похожие посты</h2>
+                  <ul>
 
-                <?php
-                  while ( $blog_related_query->have_posts() ) : $blog_related_query->the_post();
-                  get_template_part(  'template-parts/list-item-blog' );
-                  endwhile; 
-                ?>
+                  <?php
+                    while ( $blog_related_query->have_posts() ) : $blog_related_query->the_post();
+                    get_template_part(  'template-parts/list-item-blog' );
+                    endwhile; 
+                  ?>
 
-                </ul>
-              </section>
-            </div>
+                  </ul>
+                </section>
+              </div>
 
-          <?php endif; wp_reset_postdata(); ?>
+            <?php endif; wp_reset_postdata(); ?>
+          <?php endif; ?>
 
         <div class="reply">
           <h3 class="reply__title">Leave a Reply</h3>
