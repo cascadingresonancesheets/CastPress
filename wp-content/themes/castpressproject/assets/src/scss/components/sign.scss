@@ -1,0 +1,40 @@
+.sign {
+  &__message {
+    font-size: 16px;
+    color: $primary-color;
+    margin-bottom: 48px;
+  }
+
+  &__message2 {
+    font-size: 14px;
+    margin-top: 16px;
+    display: inline-block;
+  }
+
+  &__link {
+    color: $gray-color;
+    transition: color 0.1s ease-in;
+    white-space: nowrap;
+
+    &:hover {
+      color: $accent-color;
+    }
+  }
+}
+
+.sign-form {
+  &__btn {
+    margin-top: 48px;
+  }
+
+  &__checkbox {
+    margin-top: 20px;
+  }
+
+  &__text {
+    font-size: 12px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: $primary-color;
+  }
+}

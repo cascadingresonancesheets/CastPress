@@ -1,0 +1,136 @@
+.cart-content {
+  &__cart-items {
+    margin-bottom: 55px;
+  }
+
+  &__totals {
+    margin-bottom: 50px;
+
+    @media screen and (min-width: 970px) {
+      margin-top: 40px;
+    }
+  }
+}
+
+.cart-aside {
+  display: flex;
+  flex-direction: column;
+  margin-top: 48px;
+
+  @media screen and (min-width: 970px) {
+    margin-top: 0;
+  }
+}
+
+.cart-item {
+  padding: 40px 0;
+  border-bottom: 1px solid $light-gray-color-2;
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  justify-content: space-between;
+
+  @media screen and (max-width: 430px) {
+    grid-template-columns: 1fr 20px;
+    grid-template-rows: auto auto;
+
+    &__remove {
+      grid-column: 2 / -1;
+      grid-row: 1 / -1;
+      align-self: center;
+    }
+
+    &__title {
+      display: block;
+      padding-bottom: 4px;
+    }
+  }
+
+  @media screen and (min-width: 970px) {
+    grid-template-columns: 332px 160px 1fr;
+  }
+
+  &__title {
+    font-size: 16px;
+    color: $primary-color;
+
+    &:hover {
+      color: $accent-color;
+      text-decoration: underline;
+    }
+  }
+
+  &__price {
+    font-size: 16px;
+    color: $primary-color;
+  }
+
+  &__remove {
+    width: 16px;
+    height: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    > svg {
+      width: 10px;
+      height: 10px;
+      stroke: $primary-color;
+    }
+
+    &:hover > svg {
+      stroke: red;
+    }
+  }
+}
+
+.cart-coupon {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+
+  &__form {
+    display: flex;
+    align-items: flex-end;
+  }
+
+  &__code {
+    width: 200px;
+  }
+
+  &__btn {
+    margin-left: 8px;
+    padding: 8px 24px;
+  }
+
+  @media screen and (max-width: 430px) {
+    flex-direction: column;
+    align-items: flex-start;
+
+    &__form {
+      margin-bottom: 16px;
+    }
+  }
+}
+
+.cart-totals {
+  padding: 24px;
+  background-color: $light-gray-color-1;
+}
+
+.cart-total-item {
+  font-weight: 600;
+  font-size: 21px;
+  color: $primary-color;
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+
+  &__caption {
+    margin-right: 20px;
+    padding: 24px 0;
+  }
+
+  &__value {
+    white-space: nowrap;
+  }
+}

@@ -1,0 +1,139 @@
+.billing-form {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+  &__field-full {
+    flex-basis: 100%;
+  }
+
+  &__field-small {
+    flex-basis: calc(50% - 9px);
+  }
+
+  @media screen and (max-width: 530px) {
+    display: block;
+  }
+}
+
+.billing-content {
+  &__coupon {
+    display: flex;
+    align-items: flex-end;
+
+    @media screen and (max-width: 530px) {
+      margin-top: 28px;
+    }
+  }
+
+  &__radio {
+    margin-top: 40px;
+    padding-bottom: 48px;
+    border-bottom: 1px solid $light-gray-color-2;
+  }
+
+  &__aside {
+    margin-top: 48px;
+
+    @media screen and (min-width: 970px) {
+      margin-top: 0;
+    }
+  }
+}
+
+.billing-coupon {
+  &__field {
+    flex: 1;
+  }
+}
+
+.billing-radio {
+  &__img {
+    margin-left: 16px;
+  }
+
+  &__descr {
+    font-size: 16px;
+    color: $primary-color;
+    margin-top: 10px;
+    margin-bottom: 40px;
+  }
+
+  // Костыль
+  .form__field:nth-child(2) {
+    margin-bottom: 0;
+  }
+
+  &__form {
+    display: none;
+  }
+}
+
+.bottom-form {
+  &__descr {
+    font-size: 16px;
+    line-height: 156%;
+    color: $dark-gray-color;
+    margin-top: 40px;
+    margin-bottom: 24px;
+  }
+
+  &__text {
+    font-size: 16px !important;
+    display: inline-block !important;
+  }
+
+  &__check-link {
+    white-space: nowrap;
+  }
+
+  &__btn {
+    width: 100%;
+    margin-top: 40px;
+  }
+}
+
+.order-totals {
+  padding: 40px 24px;
+  background-color: $light-gray-color-1;
+
+  &__header,
+  &__item,
+  &__footer {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+  }
+
+  &__header,
+  &__footer {
+    span {
+      @extend %heading-2;
+    }
+  }
+
+  &__item {
+    span {
+      font-size: 18px;
+      color: $primary-color;
+    }
+  }
+
+  &__header {
+    padding-bottom: 16px;
+    border-bottom: 1px solid $light-gray-color-2;
+  }
+
+  &__body {
+    padding: 24px 0;
+    border-bottom: 1px solid $light-gray-color-2;
+  }
+
+  &__item + &__item {
+    margin-top: 30px;
+  }
+
+  &__footer {
+    margin-top: 30px;
+  }
+}

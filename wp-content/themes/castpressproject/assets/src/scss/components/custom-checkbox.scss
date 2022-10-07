@@ -1,0 +1,59 @@
+.custom-checkbox {
+  cursor: pointer;
+  position: relative;
+  display: block;
+
+  &__input {
+    opacity: 0;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+  }
+
+  &__text {
+    color: $dark-gray-color;
+    font-size: 12px;
+    position: relative;
+    padding-left: 26px;
+    display: inline-flex;
+    align-items: center;
+    user-select: none;
+    min-height: 18px;
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      display: inline-block;
+      width: 18px;
+      height: 18px;
+      border: 1px solid $primary-color;
+      box-sizing: border-box;
+      border-radius: 4px;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      left: 4px;
+      top: 5px;
+      width: 10px;
+      height: 8px;
+      background-image: url("data:image/svg+xml,%3Csvg width='9' height='8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M2.5 7a.5.5 0 0 0 .7 0l5.6-5.6a.5.5 0 0 0 0-.7L8.3 0a.5.5 0 0 0-.7 0L3 5 1.4 3.4a.5.5 0 0 0-.7 0l-.6.5a.5.5 0 0 0 0 .7L2.5 7Z' fill='%23222'/%3E%3C/svg%3E");
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      opacity: 0;
+    }
+  }
+
+  &__input:checked + &__text::before {
+    // background-color: $primary-color;
+    border: 1px solid $primary-color;
+  }
+
+  &__input:checked + &__text::after {
+    opacity: 1;
+  }
+}

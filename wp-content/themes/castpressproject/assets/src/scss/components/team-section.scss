@@ -1,0 +1,16 @@
+.team-section {
+  &__title {
+    margin-bottom: 25px;
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-column-gap: 70px;
+    grid-row-gap: 24px;
+
+    @media screen and (min-width: 768px) {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+}

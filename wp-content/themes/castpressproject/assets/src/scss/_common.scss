@@ -1,0 +1,159 @@
+.page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+
+  &__content {
+    flex: 1;
+    padding-top: 48px;
+
+    @media screen and (min-width: 1200px) {
+      padding-top: 96px;
+    }
+  }
+
+  &__hero {
+    margin-bottom: 64px;
+
+    @media screen and (min-width: 1200px) {
+      margin-bottom: 98px;
+    }
+  }
+
+  &__section {
+    margin-bottom: 64px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__title {
+    @extend %heading-1;
+    margin-bottom: 40px;
+
+    &_sm-margin {
+      margin-bottom: 13px;
+    }
+
+    &_big-margin {
+      margin-bottom: 42px;
+    }
+  }
+
+  &__descr {
+    font-size: 18px;
+    color: $primary-color;
+    margin-bottom: 48px;
+
+    &_sm-margin {
+      margin-bottom: 24px;
+    }
+  }
+}
+
+.wrapper {
+  margin: 0 16px;
+  max-width: initial;
+
+  @media screen and (min-width: 768px) {
+    margin: 0 auto;
+    max-width: 672px;
+  }
+}
+
+.aside-layout {
+  margin: 0 16px;
+  max-width: initial;
+
+  @media screen and (min-width: 768px) {
+    margin: 0 auto;
+    max-width: 672px;
+  }
+
+  @media screen and (min-width: 970px) {
+    margin: 0 auto;
+    max-width: 900px;
+    display: grid;
+    grid-template-columns: 525px 320px;
+    justify-content: space-between;
+
+    &__main {
+      grid-column: 1 / 2;
+    }
+
+    &__aside {
+      grid-column: 2 / -1;
+    }
+  }
+}
+
+.section {
+  &__title {
+    margin-bottom: 25px;
+  }
+}
+
+.page-article {
+  &__item {
+    margin-bottom: 48px;
+
+    &_sm-margin {
+      margin-bottom: 24px;
+    }
+  }
+}
+
+%heading-1 {
+  font-weight: 600;
+  font-size: 26px;
+  color: $primary-color;
+}
+
+%heading-2 {
+  font-weight: 600;
+  font-size: 21px;
+  color: $primary-color;
+}
+
+%heading-3 {
+  font-weight: 400;
+  font-size: 18px;
+  color: $primary-color;
+}
+
+.title {
+  @extend %heading-1;
+
+  &_center {
+    text-align: center;
+  }
+}
+
+.link {
+  color: $accent-color;
+}
+
+.items-list {
+  & .blog-posts__item {
+    margin-bottom: 48px;
+
+    @media screen and (min-width: 1200px) {
+      margin-bottom: 64px;
+    }
+  }
+}
+
+.no-image {
+  display: block;
+  margin-bottom: 16px;
+  flex-shrink: 0;
+  border-radius: 4px;
+  width: 180px;
+  height: 180px;
+  background-color: rgb(252, 252, 252);
+
+  @media screen and (min-width: 768px) {
+    margin-bottom: 0;
+  }
+}

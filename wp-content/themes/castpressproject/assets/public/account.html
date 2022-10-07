@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Account</title>
+  </head>
+  <body class="page">
+    <header class="header">
+      <div class="wrapper header__wrapper">
+        <a class="logo" href="./" aria-label="Homepage link"><img src="img/logo.svg" alt="CastPress logo" /></a>
+        <button class="humb" aria-label="Main navigation menu">
+          <span class="humb__elem-1"></span>
+          <span class="humb__elem-2"></span>
+        </button>
+        <nav class="topnav">
+          <ul class="topnav__list">
+            <li class="topnav__item topnav__item_has-submenu">
+              <a class="topnav__link" href="./episodes.html">Episodes</a>
+              <button class="submenu-toggle" aria-label="Toggle submenu"></button>
+              <ul class="topnav__submenu submenu">
+                <li class="submenu__item"><a class="submenu__link" href="#">Lorem ipsum dolor sit.</a></li>
+                <li class="submenu__item"><a class="submenu__link" href="#">Season 1</a></li>
+                <li class="submenu__item"><a class="submenu__link" href="#">Season 2</a></li>
+              </ul>
+            </li>
+            <li class="topnav__item"><a class="topnav__link" href="./shop.html">Shop</a></li>
+            <li class="topnav__item"><a class="topnav__link" href="./blog.html">Blog</a></li>
+            <li class="topnav__item"><a class="topnav__link" href="./contact.html">Contact</a></li>
+            <li class="topnav__item">
+              <a class="topnav__link topnav__link_donate" href="./donate.html">
+                <svg><use xlink:href="img/icons/sprite.svg#heart"></use></svg>
+                Donate
+              </a>
+            </li>
+          </ul>
+          <div class="header-search">
+            <form class="onefield-form">
+              <input class="onefield-form__input" type="text" name="search" placeholder="Search..." required />
+              <button class="onefield-form__btn onefield-form__btn_search" aria-label="Search">
+                <svg><use href="img/icons/sprite.svg#search"></use></svg>
+              </button>
+            </form>
+          </div>
+        </nav>
+        <div class="header-icons">
+          <button class="search-icon" aria-label="Toggle search form">
+            <svg class="search-icon__svg"><use href="img/icons/sprite.svg#search"></use></svg>
+            <span class="search-icon__cross">&#x2715;</span>
+          </button>
+          <a class="header-icons__item" aria-label="Cart" href="./cart.html">
+            <svg class="header-icons__svg header-icons__svg_cart"><use href="img/icons/sprite.svg#cart"></use></svg>
+          </a>
+          <a class="header-icons__item" aria-label="Profile" href="./account.html">
+            <svg class="header-icons__svg"><use href="img/icons/sprite.svg#profile"></use></svg>
+          </a>
+        </div>
+      </div>
+    </header>
+    <main class="page__content">
+      <div class="wrapper">
+        <h1 class="page__title">My Account</h1>
+        <div class="account-tabs">
+          <button class="account-tabs__btn account-tabs__btn_active" data-tab="dash">Dashboard</button>
+          <button class="account-tabs__btn" data-tab="order">Order</button>
+          <button class="account-tabs__btn" data-tab="download">Downloads</button>
+          <button class="account-tabs__btn" data-tab="adresses">Addresses</button>
+          <button class="account-tabs__btn" data-tab="details">Account Details</button>
+          <button class="account-tabs__btn">Logout</button>
+        </div>
+        <div class="account-item account-dash" id="dash">
+          <p class="account-dash__text">
+            Hello Vitatheme (not Vitatheme?
+            <a class="account-dash__link" href="#">Log out</a>
+            ) From your account dashboard you can view your
+            <a class="account-dash__link" href="#">recent orders</a>
+            , manage your
+            <a class="account-dash__link" href="#">shipping and billing addresses</a>
+            , and edit your
+            <a class="account-dash__link" href="#">password and account details</a>
+            .
+          </p>
+        </div>
+        <div class="account-item account-order account-item_hidden" id="order">
+          <div class="table-wrapper">
+            <table class="table">
+              <tr>
+                <th>Order Num</th>
+                <th>Date</th>
+                <th>Status</th>
+                <th>Total</th>
+                <th>Action</th>
+              </tr>
+              <tr>
+                <td>7643980998990</td>
+                <td>October 8,2021</td>
+                <td>Delivered</td>
+                <td>$105</td>
+                <td><a class="table__link" href="#">View</a></td>
+              </tr>
+              <tr>
+                <td>7643980998990</td>
+                <td>October 8,2021</td>
+                <td>Delivered</td>
+                <td>$105</td>
+                <td><a class="table__link" href="#">View</a></td>
+              </tr>
+            </table>
+          </div>
+        </div>
+        <div class="account-item account-download account-item_hidden" id="download">
+          <div class="table-wrapper">
+            <table class="table">
+              <tr>
+                <th>Order Num</th>
+                <th>Date</th>
+                <th>Status</th>
+                <th>Total</th>
+                <th>Action</th>
+              </tr>
+              <tr>
+                <td>7643980998990</td>
+                <td>October 8,2021</td>
+                <td>Delivered</td>
+                <td>$105</td>
+                <td>
+                  <a class="table__link" href="#">View</a>
+                  <span class="table__link-separator">|</span>
+                  <a class="table__link" href="#">Download</a>
+                </td>
+              </tr>
+              <tr>
+                <td>7643980998990</td>
+                <td>October 8,2021</td>
+                <td>Delivered</td>
+                <td>$105</td>
+                <td>
+                  <a class="table__link" href="#">View</a>
+                  <span class="table__link-separator">|</span>
+                  <a class="table__link" href="#">Download</a>
+                </td>
+              </tr>
+            </table>
+          </div>
+        </div>
+        <div class="account-item account-adress account-item_hidden" id="adresses">
+          <div class="account-adress__left">
+            <h2 class="account-subtitle">Billing Address</h2>
+            <form class="form account-form">
+              <div class="form__field">
+                <label class="form__label" for="first-name">First Name*</label>
+                <input class="form__input form__input_small" type="text" name="first-name" id="first-name" required />
+              </div>
+              <div class="form__field">
+                <label class="form__label" for="last-name">Last Name*</label>
+                <input class="form__input form__input_small" type="text" name="last-name" id="last-name" required />
+              </div>
+              <div class="form__field">
+                <label class="form__label" for="company-name">Company Name*</label>
+                <input class="form__input form__input_small" type="text" name="company-name" id="company-name" required />
+              </div>
+              <div class="form__field">
+                <label class="form__label" for="city">Town/City*</label>
+                <input class="form__input form__input_small" type="text" name="city" id="city" required />
+              </div>
+              <div class="form__field">
+                <label class="form__label" for="adress">Street Adress*</label>
+                <input class="form__input form__input_small" type="text" name="adress" id="adress" required />
+              </div>
+              <div class="form__field form__field_last">
+                <label class="form__label" for="postcode">Postcode/ZIP*</label>
+                <input class="form__input form__input_small" type="text" name="postcode" id="postcode" required />
+              </div>
+              <button class="btn account-form__btn">Save Address</button>
+            </form>
+          </div>
+          <div class="account-adress__right">
+            <h2 class="account-subtitle">Shipping Address</h2>
+            <div class="add-adress">
+              <a class="add-adress__link" href="#">Add</a>
+              <p class="add-adress__text">You have not set up this type of address yet.</p>
+            </div>
+          </div>
+        </div>
+        <div class="account-item account-details account-item_hidden" id="details">
+          <form class="form account-form account-details__form">
+            <h2 class="account-subtitle">Details</h2>
+            <div class="form__field">
+              <label class="form__label" for="first-name-details">First Name*</label>
+              <input class="form__input form__input_small" type="text" name="first-name-details" id="first-name-details" required />
+            </div>
+            <div class="form__field">
+              <label class="form__label" for="last-name-details">Last Name*</label>
+              <input class="form__input form__input_small" type="text" name="last-name-details" id="last-name-details" required />
+            </div>
+            <div class="form__field form__field_last">
+              <label class="form__label" for="email">Email Address*</label>
+              <input class="form__input form__input_small" type="email" name="email" id="email" required />
+            </div>
+            <h2 class="account-subtitle account-subtitle_margin">Password Change</h2>
+            <div class="form__field">
+              <label class="form__label" for="current">Current Password*</label>
+              <input class="form__input form__input_small" type="password" name="current" id="current" autocomplete="off" required />
+            </div>
+            <div class="form__field">
+              <label class="form__label" for="new">New Password*</label>
+              <input class="form__input form__input_small" type="password" name="new" id="new" autocomplete="off" required />
+            </div>
+            <div class="form__field form__field_last">
+              <label class="form__label" for="new-confirm">Confirm New Password*</label>
+              <input class="form__input form__input_small" type="password" name="new-confirm" id="new-confirm" autocomplete="off" required />
+            </div>
+            <button class="btn account-form__btn">Save Changes</button>
+          </form>
+        </div>
+      </div>
+    </main>
+    <footer class="footer">
+      <div class="footer__main">
+        <nav class="footer__nav">
+          <ul class="footer-nav">
+            <li class="footer-nav__item"><a class="footer-nav__link" href="./episodes.html">Episodes</a></li>
+            <li class="footer-nav__item"><a class="footer-nav__link" href="./shop.html">Shop</a></li>
+            <li class="footer-nav__item"><a class="footer-nav__link" href="./cart.html">Cart</a></li>
+            <li class="footer-nav__item"><a class="footer-nav__link" href="./checkout.html">Checkout</a></li>
+            <li class="footer-nav__item"><a class="footer-nav__link" href="./sign-in.html">Sign In</a></li>
+            <li class="footer-nav__item"><a class="footer-nav__link" href="./account.html">Account</a></li>
+            <li class="footer-nav__item"><a class="footer-nav__link" href="./blog.html">Blog</a></li>
+            <li class="footer-nav__item"><a class="footer-nav__link" href="./contact.html">Contact</a></li>
+            <li class="footer-nav__item"><a class="footer-nav__link" href="./donate.html">Donate</a></li>
+            <li class="footer-nav__item"><a class="footer-nav__link" href="./about.html">About</a></li>
+            <li class="footer-nav__item"><a class="footer-nav__link" href="./404.html">404</a></li>
+          </ul>
+        </nav>
+        <form class="footer-form" action="#">
+          <h3 class="footer-form__title">Newsletter</h3>
+          <label class="footer-form__label" for="footer-email">Sign up now; get closer to our action.</label>
+          <div class="footer-form__input onefield-form">
+            <input class="onefield-form__input" type="email" name="email" placeholder="Email adress..." required id="footer-email" />
+            <button class="onefield-form__btn" aria-label="subscribe">
+              <svg><use xlink:href="img/icons/sprite.svg#arrow"></use></svg>
+            </button>
+          </div>
+        </form>
+      </div>
+      <div class="footer__bottom">
+        <div class="footer__slogan">
+          PodcastTheme by VitaThemes |
+          <a href="/privacy.html" target="_blank">Privacy policy</a>
+        </div>
+        <ul class="footer__socials socials">
+          <li class="socials__item">
+            <a class="socials__link" href="#" aria-label="facebook" target="_blank">
+              <svg><use href="img/icons/sprite.svg#facebook"></use></svg>
+            </a>
+          </li>
+          <li class="socials__item">
+            <a class="socials__link" href="#" aria-label="github" target="_blank">
+              <svg><use href="img/icons/sprite.svg#github"></use></svg>
+            </a>
+          </li>
+          <li class="socials__item">
+            <a class="socials__link" href="#" aria-label="twitter" target="_blank">
+              <svg><use href="img/icons/sprite.svg#twitter"></use></svg>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </footer>
+    <script src="main.js"></script>
+  </body>
+</html>

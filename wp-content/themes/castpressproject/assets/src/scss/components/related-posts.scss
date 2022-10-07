@@ -1,0 +1,19 @@
+.related-posts {
+  border-bottom: 1px solid $light-gray-color-2;
+
+  ul .podcast-card:last-child {
+    padding-bottom: 64px;
+  }
+
+  &__item {
+    margin-bottom: 40px;
+
+    @media screen and (min-width: 768px) {
+      margin-bottom: 24px;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}

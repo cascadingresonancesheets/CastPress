@@ -1,0 +1,67 @@
+.form {
+  &__field {
+    margin-bottom: 28px;
+
+    &_last,
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__label {
+    font-size: 16px;
+    line-height: 156%;
+    color: $dark-gray-color;
+    display: block;
+    margin-bottom: 4px;
+  }
+
+  &__input {
+    width: 100%;
+    border: none;
+    height: 42px;
+    background-color: $light-gray-color-1;
+    border-radius: 4px;
+    font-size: 14px;
+    color: $primary-color;
+    padding: 0 14px;
+
+    &_small {
+      height: 34px;
+    }
+
+    &::placeholder {
+      color: $dark-gray-color;
+    }
+
+    &_textarea {
+      height: 150px;
+      resize: none;
+      overflow: auto;
+      padding: 14px;
+    }
+  }
+
+  &__checkbox {
+    margin-top: 24px;
+
+    @media screen and (min-width: 768px) {
+      margin-top: 32px;
+    }
+  }
+
+  &__btn {
+    margin-top: 40px;
+  }
+
+  &__select {
+    height: 34px;
+    background-color: $light-gray-color-1;
+    width: 100%;
+    border: none;
+    border-radius: 4px;
+    font-size: 14px;
+    color: $primary-color;
+    padding: 0 14px;
+  }
+}

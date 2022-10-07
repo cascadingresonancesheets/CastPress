@@ -1,0 +1,54 @@
+.onefield-form {
+  position: relative;
+  width: 315px;
+
+  @media screen and (max-width: 380px) {
+    width: 100%;
+  }
+
+  &__input {
+    width: 100%;
+    border: none;
+    height: 42px;
+    background-color: $light-gray-color-1;
+    border-radius: 4px;
+    font-size: 12px;
+    color: $primary-color;
+    padding: 0 14px;
+    padding-right: 48px;
+
+    &::placeholder {
+      color: $dark-gray-color;
+    }
+
+    @media screen and (min-width: 768px) {
+      font-size: 14px;
+    }
+  }
+
+  &__btn {
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: $accent-color;
+    border-radius: 4px;
+    position: absolute;
+    right: 3px;
+    top: 3px;
+
+    > svg {
+      fill: #fff;
+      width: 11px;
+      height: 8px;
+    }
+
+    &_search {
+      > svg {
+        width: 16px;
+        height: 16px;
+      }
+    }
+  }
+}

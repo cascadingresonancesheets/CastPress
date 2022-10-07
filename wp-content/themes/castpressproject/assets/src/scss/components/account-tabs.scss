@@ -1,0 +1,66 @@
+.account-tabs {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+
+  &__btn {
+    font-size: 14px;
+    color: $primary-color;
+    padding: 14px 24px;
+    border: 1px solid $light-gray-color-2;
+    margin-top: -1px;
+    transition: background-color 0.05s ease-in;
+    user-select: none;
+    white-space: nowrap;
+
+    &:first-child {
+      border-radius: 4px 4px 0px 0px;
+    }
+
+    &:last-child {
+      border-radius: 0px 0px 4px 4px;
+    }
+
+    &:hover {
+      background-color: $light-gray-color-2;
+    }
+
+    &_active {
+      background-color: $light-gray-color-2;
+    }
+  }
+
+  @media screen and (min-width: 666px) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+
+    &__btn {
+      font-size: 14px;
+      color: $primary-color;
+      padding: 14px 24px;
+      border: 1px solid $light-gray-color-2;
+      transform: translateY(1px);
+      margin-left: -1px;
+      transition: background-color 0.05s ease-in;
+      user-select: none;
+
+      &:first-child {
+        border-radius: 4px 0px 0px 0px;
+      }
+
+      &:last-child {
+        border-radius: 0px 4px 0px 0px;
+      }
+
+      &:hover {
+        background-color: $light-gray-color-2;
+      }
+
+      &_active {
+        background-color: $light-gray-color-2;
+      }
+    }
+  }
+}

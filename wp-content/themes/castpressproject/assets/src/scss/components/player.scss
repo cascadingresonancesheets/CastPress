@@ -1,0 +1,171 @@
+.player {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+  gap: 8px;
+
+  &__play {
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    > svg {
+      width: 16px;
+      height: 16px;
+      fill: $primary-color;
+    }
+  }
+
+  &__play-svg {
+    display: none;
+
+    &_is-active {
+      display: block;
+    }
+  }
+
+  &__pause-svg {
+    display: none;
+
+    &_is-active {
+      display: block;
+    }
+  }
+
+  &__current-time {
+    font-size: 12px;
+    letter-spacing: 0.16em;
+    color: $dark-gray-color;
+    margin-left: 8px;
+  }
+
+  &__play-time {
+    font-size: 12px;
+    letter-spacing: 0.16em;
+    color: $dark-gray-color;
+    margin-left: 8px;
+  }
+
+  &__progress-bar {
+    position: relative;
+    height: 7px;
+    border-radius: 2px;
+    background-color: $light-gray-color-1;
+    width: 100%;
+    cursor: pointer;
+  }
+
+  &__progress {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 7px;
+    border-radius: 2px;
+    background-color: $primary-color;
+    width: 0;
+  }
+
+  &__volume {
+    position: relative;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 3;
+
+    > svg {
+      width: 16px;
+      height: 16px;
+      fill: $primary-color;
+    }
+  }
+
+  &__volume-svg {
+    display: none;
+
+    &_is-active {
+      display: block;
+    }
+  }
+
+  &__volume_muted-svg {
+    display: none;
+
+    &_is-active {
+      display: block;
+    }
+  }
+
+  &__volume-wrap {
+    position: relative;
+
+    &::before {
+      display: none;
+    }
+
+    @media screen and (min-width: 1015px) {
+      &::before {
+        content: "";
+        display: block;
+        position: absolute;
+        width: 20px;
+        height: 110px;
+        background-color: transparent;
+        bottom: 0;
+        z-index: 1;
+      }
+
+      &:hover .player__volume-bar {
+        display: block;
+      }
+    }
+  }
+
+  &__volume-bar {
+    position: absolute;
+    width: 6px;
+    height: 70px;
+    background-color: $light-gray-color-1;
+    border-radius: 2px;
+    left: calc(50% - 3px);
+    top: -80px;
+    cursor: pointer;
+    display: none;
+    z-index: 2;
+  }
+
+  &__volume-value {
+    position: absolute;
+    width: 6px;
+    height: 100%;
+    background-color: $primary-color;
+    border-radius: 2px;
+    bottom: 0;
+    left: 0;
+  }
+
+  &__download {
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    > svg {
+      width: 16px;
+      height: 16px;
+      fill: $primary-color;
+    }
+  }
+
+  @media screen and (max-width: 767px) {
+    &__download,
+    &__volume {
+      margin-left: 8px;
+    }
+  }
+}

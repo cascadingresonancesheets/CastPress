@@ -1,0 +1,31 @@
+.podcasts {
+  &__podcasts-list {
+    margin-bottom: 48px;
+
+    &_front-page {
+      margin-bottom: 36px;
+    }
+
+    @media screen and (min-width: 1200px) {
+      margin-bottom: 64px;
+
+      &_front-page {
+        margin-bottom: 36px;
+      }
+    }
+  }
+}
+
+.podcasts-list {
+  &__item {
+    margin-bottom: 48px;
+
+    @media screen and (min-width: 1200px) {
+      margin-bottom: 64px;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}

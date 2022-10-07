@@ -1,0 +1,49 @@
+.pagination .nav-links {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+
+  .page-numbers {
+    width: 30px;
+    height: 30px;
+    border-radius: 4px;
+    background-color: $light-gray-color-1;
+    text-align: center;
+    line-height: 30px;
+    font-size: 12px;
+    color: $dark-gray-color;
+
+    &.prev,
+    &.next {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      > svg {
+        width: 5px;
+        height: 10px;
+        fill: $dark-gray-color;
+      }
+    }
+
+    &.prev {
+      // display: none;
+      > svg {
+        transform: rotate(180deg);
+      }
+    }
+
+    &:hover[href] {
+      background-color: $light-gray-color-2;
+    }
+
+    &.current {
+      background-color: $accent-color;
+      color: #fff;
+    }
+
+    &.dots {
+      background-color: #fff;
+    }
+  }
+}

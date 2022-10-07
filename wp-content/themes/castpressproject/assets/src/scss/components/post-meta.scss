@@ -1,0 +1,20 @@
+.post-meta {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+
+  &__item {
+    font-size: 14px;
+    color: $gray-color;
+    transition: color 0.14s ease-in-out;
+
+    &:hover:not(span) {
+      color: $primary-color;
+    }
+  }
+
+  &__sep {
+    font-size: 14px;
+    color: $gray-color;
+  }
+}

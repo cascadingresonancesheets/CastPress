@@ -1,0 +1,48 @@
+.humb {
+  position: relative;
+  width: 32px;
+  height: 32px;
+  z-index: 10;
+  margin-left: 24px;
+  order: 2;
+
+  @media screen and (min-width: 1200px) {
+    margin-left: auto;
+  }
+
+  &__elem-1,
+  &__elem-2 {
+    position: absolute;
+    width: 24px;
+    height: 1px;
+    background-color: $primary-color;
+    left: 4px;
+    right: 4px;
+    transform: rotate(0deg);
+    transition: transform 0.19s ease-in-out;
+  }
+
+  &__elem-1 {
+    transform: translateY(6px);
+  }
+
+  &__elem-2 {
+    transform: translateY(-6px);
+  }
+
+  &_is-open {
+    .humb__elem-1 {
+      transform: translateY(0px);
+      transform: rotate(45deg);
+    }
+
+    .humb__elem-2 {
+      transform: translateY(0px);
+      transform: rotate(-45deg);
+    }
+  }
+
+  @media screen and (min-width: 1200px) {
+    display: none;
+  }
+}

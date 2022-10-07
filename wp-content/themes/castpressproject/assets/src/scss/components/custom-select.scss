@@ -1,0 +1,84 @@
+.custom-select {
+  position: relative;
+  user-select: none;
+
+  select {
+    display: none;
+  }
+
+  &__item,
+  &__selected {
+    cursor: pointer;
+  }
+
+  &__selected {
+    height: 34px;
+    background-color: $light-gray-color-1;
+    width: 100%;
+    border-radius: 4px;
+    font-size: 14px;
+    color: $primary-color;
+    padding: 0 14px;
+    display: flex;
+    align-items: center;
+    position: relative;
+
+    &::after {
+      content: "";
+      position: absolute;
+      display: block;
+      background-image: url("img/select-bird.svg");
+      background-repeat: no-repeat;
+      background-position: center;
+      width: 8px;
+      height: 5px;
+      right: 14px;
+      top: 50%;
+      transform: translateY(-50%) rotate(0deg);
+    }
+
+    &_is-open {
+      border-radius: 4px 4px 0 0;
+
+      &::after {
+        transform: translateY(-50%) rotate(180deg);
+      }
+    }
+  }
+
+  &__items {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: $light-gray-color-1;
+    border-radius: 0 0 4px 4px;
+    display: none;
+    max-height: 238px;
+    overflow-y: auto;
+
+    &_is-open {
+      display: block;
+      z-index: 20;
+    }
+  }
+
+  &__item {
+    background-color: $light-gray-color-1;
+    height: 34px;
+    font-size: 14px;
+    color: $primary-color;
+    padding: 0 16px;
+    display: flex;
+    align-items: center;
+
+    &:last-child {
+      border-radius: 0 0 4px 4px;
+    }
+
+    &:hover,
+    &_is-selected {
+      background-color: $light-gray-color-2;
+    }
+  }
+}

@@ -1,0 +1,13 @@
+.post-share {
+  display: flex;
+  align-items: center;
+  padding: 40px 0;
+  border-top: 1px solid $light-gray-color-2;
+  border-bottom: 1px solid $light-gray-color-2;
+
+  &__caption {
+    font-size: 16px;
+    color: $primary-color;
+    margin-right: 24px;
+  }
+}

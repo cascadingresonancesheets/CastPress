@@ -1,0 +1,85 @@
+.account-form {
+  &__btn {
+    width: 100%;
+    margin-top: 40px;
+  }
+}
+
+.account-download,
+.account-adress,
+.account-order,
+.account-details {
+  margin-top: 40px;
+}
+
+.account-dash {
+  margin-top: 30px;
+
+  &__text {
+    font-size: 16px;
+    line-height: 156%;
+    color: $dark-gray-color;
+  }
+  &__link {
+    color: $gray-color;
+    font-size: inherit;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+.account-adress {
+  display: grid;
+  grid-row-gap: 40px;
+
+  @media screen and (min-width: 666px) {
+    display: grid;
+    grid-column-gap: 32px;
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.add-adress {
+  &__link {
+    color: $accent-color;
+    font-size: 18px;
+    margin-bottom: 8px;
+    display: block;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  &__text {
+    font-size: 16px;
+    color: $dark-gray-color;
+  }
+}
+
+.account-details {
+  display: block;
+
+  @media screen and (min-width: 768px) {
+    display: grid;
+    grid-column-gap: 32px;
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.account-subtitle {
+  @extend %heading-2;
+  margin-bottom: 40px;
+
+  &_margin {
+    margin-top: 48px;
+  }
+}
+
+.account-item {
+  &_hidden {
+    display: none !important;
+  }
+}

@@ -1,0 +1,26 @@
+.error-hero {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+  &__title {
+    font-weight: 600;
+    font-size: 144px;
+    line-height: 180px;
+    color: $primary-color;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  &__sub-title {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  &__descr {
+    font-size: 16px;
+    line-height: 156%;
+    text-align: center;
+    color: $dark-gray-color;
+  }
+}
