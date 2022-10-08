@@ -50,9 +50,10 @@
             <button class="player__play" aria-label="Play / Pause">
               <svg class="player__play-svg player__play-svg_is-active"><use xlink:href="<?php echo $assets_path; ?>img/icons/sprite.svg#play"></use></svg><svg class="player__pause-svg"><use xlink:href="<?php echo $assets_path; ?>img/icons/sprite.svg#pause"></use></svg>
             </button>
-            <span class="player__current-time">00:00</span>
+            <span class="player__current-time">00:00:00</span>
+            <span class="player__time-sep">/</span>
             <div class="player__progress-bar"><div class="player__progress"></div></div>
-            <span class="player__play-time">00:00</span>
+            <span class="player__play-time">00:00:00</span>
             <div class="player__volume-wrap">
               <button class="player__volume" aria-label="Volume">
                 <svg class="player__volume-svg player__volume-svg_is-active"><use xlink:href="<?php echo $assets_path; ?>img/icons/sprite.svg#sound"></use></svg><svg class="player__volume_muted-svg"><use xlink:href="<?php echo $assets_path; ?>img/icons/sprite.svg#sound_muted"></use></svg>
@@ -88,7 +89,7 @@
           <?php if ( get_field( 'podcast_transcript' ) ): ?>
             <details class="transcript">
               <summary class="transcript__caption">
-                Listening time: 86 minutes (JS) | View transcript
+                Продолжительность <span>0</span> мин. | Просмотреть стенограмму
                 <svg><use xlink:href="<?php echo $assets_path; ?>img/icons/sprite.svg#arrow"></use></svg>
               </summary>
               <div class="transcript__content">
@@ -115,21 +116,7 @@
           
         </div>
         <div class="page-article__item">
-          <div class="post-share">
-            <span class="post-share__caption">Share:</span>
-            <ul class="socials">
-              <li class="socials__item">
-                <a class="socials__link" onclick="Share.facebook('URL','TITLE','IMG_PATH','DESC')">
-                  <svg aria-hidden><use xlink:href="<?php echo $assets_path; ?>img/icons/sprite.svg#facebook"></use></svg>
-                </a>
-              </li>
-              <li class="socials__item">
-                <a class="socials__link" onclick="Share.twitter('URL','TITLE')">
-                  <svg aria-hidden><use xlink:href="<?php echo $assets_path; ?>img/icons/sprite.svg#twitter"></use></svg>
-                </a>
-              </li>
-            </ul>
-          </div>
+          <?php get_template_part( 'template-parts/share' ); ?>
         </div>
         <?php 
           $podcasts_related_query = new WP_Query([

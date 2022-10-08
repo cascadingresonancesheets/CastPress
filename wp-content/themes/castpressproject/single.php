@@ -60,26 +60,7 @@
           
         </div>
         <div class="page-article__item">
-          <div class="post-share">
-            <span class="post-share__caption">Share:</span>
-            <ul class="socials">
-              <li class="socials__item">
-                <a class="socials__link" href="#" aria-label="facebook">
-                  <svg aria-hidden><use xlink:href="img/icons/sprite.svg#facebook"></use></svg>
-                </a>
-              </li>
-              <li class="socials__item">
-                <a class="socials__link" href="#" aria-label="github">
-                  <svg aria-hidden><use xlink:href="img/icons/sprite.svg#github"></use></svg>
-                </a>
-              </li>
-              <li class="socials__item">
-                <a class="socials__link" href="#" aria-label="twitter">
-                  <svg aria-hidden><use xlink:href="img/icons/sprite.svg#twitter"></use></svg>
-                </a>
-              </li>
-            </ul>
-          </div>
+          <?php get_template_part( 'template-parts/share' ); ?>
         </div>
         <?php 
           if ( isset($tags_id) ):

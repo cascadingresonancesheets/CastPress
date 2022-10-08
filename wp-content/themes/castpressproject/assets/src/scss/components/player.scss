@@ -5,6 +5,11 @@
   width: 100%;
   gap: 8px;
 
+  @media screen and (max-width: 767px) {
+    row-gap: 16px;
+    flex-wrap: wrap;
+  }
+
   &__play {
     width: 20px;
     height: 20px;
@@ -41,12 +46,26 @@
     color: $dark-gray-color;
     margin-left: 8px;
   }
-
+  
   &__play-time {
     font-size: 12px;
     letter-spacing: 0.16em;
     color: $dark-gray-color;
     margin-left: 8px;
+    
+    @media screen and (max-width: 767px) {
+      margin-right: auto;
+      margin-left: 0;
+    }
+  }
+
+  &__time-sep {
+    font-size: 12px;
+    color: $dark-gray-color;
+
+    @media screen and (min-width: 768px) {
+      display: none;
+    }
   }
 
   &__progress-bar {
@@ -56,6 +75,10 @@
     background-color: $light-gray-color-1;
     width: 100%;
     cursor: pointer;
+
+    @media screen and (max-width: 767px) {
+      order: 10;
+    }
   }
 
   &__progress {

@@ -1,10 +1,9 @@
 .post-tags {
   display: flex;
-
-  &__item + &__item {
-    margin-left: 24px;
-  }
-
+  flex-wrap: wrap;
+  row-gap: 4px;
+  column-gap: 24px;
+  
   &__link {
     font-size: 16px;
     line-height: 156%;

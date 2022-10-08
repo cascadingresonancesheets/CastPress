@@ -14,11 +14,20 @@ const playerVolumeBar = document.querySelector(".player__volume-bar");
 const playerVolumeValue = document.querySelector(".player__volume-value");
 
 if (player) {
+  if (localStorage.volume) {
+    player.volume = localStorage.volume;
+    playerVolumeValue.style.height = .7 * (player.volume * 100) + "px";
+  }
+
   let currentTime = setInterval(() => {}, 500);
   clearInterval(currentTime);
 
-  player.addEventListener("loadedmetadata", function getTime() {
+  player.addEventListener("loadedmetadata", function() {
     playerPlayTime.innerHTML = timePrettier(Math.round(player.duration));
+    const minsInfo = document.querySelector('.transcript__caption span');
+    if (minsInfo) {
+      minsInfo.innerHTML = getMinutes(Math.round(player.duration));
+    }
   });
 
   player.addEventListener("ended", function () {
@@ -27,22 +36,27 @@ if (player) {
   });
 
   function timePrettier(time) {
-    let minutes = Math.floor(time / 60);
-    if (minutes.toString().length == 1) minutes = "0" + minutes;
-    let seconds = time - minutes * 60;
-    if (seconds.toString().length == 1) seconds = "0" + seconds;
-    return minutes + ":" + seconds;
+    var sec_num = parseInt(time, 10);
+    var hours   = Math.floor(sec_num / 3600);
+    var minutes = Math.floor((sec_num - (hours * 3600)) / 60);
+    var seconds = sec_num - (hours * 3600) - (minutes * 60);
+
+    if (hours   < 10) {hours   = "0"+hours;}
+    if (minutes < 10) {minutes = "0"+minutes;}
+    if (seconds < 10) {seconds = "0"+seconds;}
+    return hours+':'+minutes+':'+seconds;
+  }
+
+  function getMinutes(time) {
+    const sec_num = parseInt(time, 10);
+    const minutes = Math.floor((sec_num / 60));
+
+    return minutes;
   }
 
   playerPlay.onclick = function () {
-    function playBtnSwitch() {
-      playerPlaySVG.classList.toggle("player__play-svg_is-active");
-      playerPauseSVG.classList.toggle("player__pause-svg_is-active");
-    }
-
     if (player.paused) {
       player.play();
-      playBtnSwitch();
       currentTime = setInterval(() => {
         let time = Math.round(player.currentTime);
         playerCurrentTime.innerHTML = timePrettier(time);
@@ -51,14 +65,26 @@ if (player) {
       }, 500);
     } else {
       player.pause();
-      playBtnSwitch();
       clearInterval(currentTime);
     }
   };
 
+  player.addEventListener("play", () => {
+    playerPlaySVG.classList.remove("player__play-svg_is-active");
+    playerPauseSVG.classList.add("player__pause-svg_is-active");
+  });
+
+  player.addEventListener("pause", () => {
+    playerPlaySVG.classList.add("player__play-svg_is-active");
+    playerPauseSVG.classList.remove("player__pause-svg_is-active");
+  });
+
   playerProgressBar.addEventListener("click", (e) => {
     playerProgress.style.width = getRelativeCoordinates(e, e.target) + "px";
-    player.currentTime = (player.duration / 100) * (getRelativeCoordinates(e, e.target) / (playerProgressBar.offsetWidth / 100));
+    player.currentTime =
+      (player.duration / 100) *
+      (getRelativeCoordinates(e, e.target) /
+        (playerProgressBar.offsetWidth / 100));
     let time = Math.round(player.currentTime);
     playerCurrentTime.innerHTML = timePrettier(time);
   });
@@ -98,6 +124,8 @@ if (player) {
   playerVolumeBar.addEventListener("click", (e) => {
     playerVolumeValue.style.height = 70 - getRelativeCoordinatesV(e, playerVolumeBar) + "px";
     player.volume = 1 - playerVolumeValue.offsetTop / (playerVolumeBar.offsetTop / 100) / -100;
+    localStorage.setItem('volume', player.volume);
+    console.log(player.volume);
   });
 
   function getRelativeCoordinatesV(event, referenceElement) {
