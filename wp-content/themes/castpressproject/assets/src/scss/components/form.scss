@@ -44,10 +44,6 @@
 
   &__checkbox {
     margin-top: 24px;
-
-    @media screen and (min-width: 768px) {
-      margin-top: 32px;
-    }
   }
 
   &__btn {
@@ -63,5 +59,20 @@
     font-size: 14px;
     color: $primary-color;
     padding: 0 14px;
+  }
+
+  &__error-text {
+    font-size: 15px;
+    color: #e24242;
+    padding-top: .8em;
+    padding-left: 14px;
+  }
+
+  &__success {
+    font-size: 17px;
+    background-color: $accent-color;
+    color: #fff;
+    padding: 1em;
+    border-radius: 5px;
   }
 }

@@ -13,19 +13,16 @@ function cast_register_posts() {
     'show_admin_column' => true,
     'rewrite' => [
       'slug' => 'podcasts/category',
-      // 'with_front' => false,
     ],
   ] );
 
   // Podcast Post Type
   register_post_type( 'podcast', [
-    // 'show_in_rest' => true,
     'menu_position' => 5,
     'supports' => ['title', 'editor', 'thumbnail', 'comments', 'author'],
     'taxonomies' => ['podcast_category', 'post_tag'],
     'rewrite' => [
       'slug' => 'podcasts',
-      // 'with_front' => false,
     ],
     'has_archive' => true,
     'public' => true,
@@ -42,13 +39,11 @@ function cast_register_posts() {
 
   // Blog Post Type
   register_post_type( 'blog', [
-    // 'show_in_rest' => true,
     'menu_position' => 5,
     'supports' => ['title', 'editor', 'thumbnail', 'comments', 'author'],
     'taxonomies' => ['post_tag'],
     'rewrite' => [
       'slug' => 'blog',
-      // 'with_front' => false,
     ],
     'has_archive' => true,
     'public' => true,
@@ -82,6 +77,28 @@ function cast_register_posts() {
       'singular_name' => 'Член команды',
     ],
     'menu_icon' => 'dashicons-groups',
+  ] );
+
+  // Feedback Post Type
+  register_post_type( 'feedback', [
+    'menu_position' => 55,
+    'supports' => ['title'],
+    'has_archive' => false,
+    'public' => false,
+    'show_ui' => true,
+    'publicly_queryable' => false,
+    'exclude_from_search' => false,
+    'show_in_nav_menus' => false,
+    'labels' => [
+      'name' => 'Обратная связь',
+      'all_items' => 'Обратная связь',
+      'singular_name' => 'Обратная связь',
+    ],
+    'menu_icon' => 'dashicons-feedback',
+    'map_meta_cap' => true,
+    'capabilities' => [
+      'create_posts' => false
+    ]
   ] );
 }
 

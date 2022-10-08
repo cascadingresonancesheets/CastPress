@@ -10,9 +10,11 @@ include( get_template_directory() . '/inc/menus.php' );
 include( get_template_directory() . '/inc/custom-posts.php' );
 include( get_template_directory() . '/inc/posts-by-author.php' );
 include( get_template_directory() . '/inc/meta.php' );
+include( get_template_directory() . '/inc/contact-form.php' );
+include( get_template_directory() . '/inc/metaboxes.php' );
 
+// no guttenberg
 add_filter( 'use_block_editor_for_post_type', '__return_false' );
-
 
 // hide post menu item
 function custom_menu_page_removing() {
@@ -34,6 +36,4 @@ function hide_editor() {
 
 add_action( 'admin_menu', 'hide_editor' );
 
-// update_option( 'medium_size_w', 300 );
-// update_option( 'medium_size_h', 300 );
 update_option( 'medium_crop', 1 );

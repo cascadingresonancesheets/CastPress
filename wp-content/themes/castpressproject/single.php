@@ -101,7 +101,7 @@
 
                   <?php
                     while ( $blog_related_query->have_posts() ) : $blog_related_query->the_post();
-                    get_template_part(  'template-parts/list-item-blog' );
+                    get_template_part( 'template-parts/list-item-blog' );
                     endwhile; 
                   ?>
 
