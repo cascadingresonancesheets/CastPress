@@ -13,6 +13,10 @@ include( get_template_directory() . '/inc/meta.php' );
 include( get_template_directory() . '/inc/contact-form.php' );
 include( get_template_directory() . '/inc/metaboxes.php' );
 
+include( get_template_directory() . '/inc/podcast-statistics/admin-menu.php' );
+include( get_template_directory() . '/inc/podcast-statistics/metabox.php' );
+include( get_template_directory() . '/inc/podcast-statistics/save-stats.php' );
+
 // no guttenberg
 add_filter( 'use_block_editor_for_post_type', '__return_false' );
 

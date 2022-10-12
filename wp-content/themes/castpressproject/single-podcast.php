@@ -31,7 +31,7 @@
             <span class="post-meta__sep">|</span>
 
             <!-- post date -->
-            <span class="post-meta__item"><?php the_date( 'M d, Y' ); ?></span>
+            <span id="trigger" class="post-meta__item"><?php the_date( 'M d, Y' ); ?></span>
 
             <span class="post-meta__sep">|</span>
 
@@ -44,9 +44,15 @@
           </div>
 
           <!-- PLAYER -->
-          <div class="player podcast__player player">
+          <div class="player podcast__player">
 
-            <audio id="player" src="<?php the_field( 'podcast_audiofile' ); ?>"></audio>
+            <audio 
+              id="player"
+              src="<?php the_field( 'podcast_audiofile' ); ?>"
+              data-id="<?php echo $id; ?>"
+              data-url="<?php echo esc_url(admin_url( 'admin-ajax.php' )); ?>">
+            </audio>
+            
             <button class="player__play" aria-label="Play / Pause">
               <svg class="player__play-svg player__play-svg_is-active"><use xlink:href="<?php echo $assets_path; ?>img/icons/sprite.svg#play"></use></svg><svg class="player__pause-svg"><use xlink:href="<?php echo $assets_path; ?>img/icons/sprite.svg#pause"></use></svg>
             </button>

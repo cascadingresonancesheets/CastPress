@@ -57,26 +57,54 @@ if (player) {
   playerPlay.onclick = function () {
     if (player.paused) {
       player.play();
-      currentTime = setInterval(() => {
-        let time = Math.round(player.currentTime);
-        playerCurrentTime.innerHTML = timePrettier(time);
 
-        playerProgress.style.width = time / (player.duration / 100) + "%";
-      }, 500);
     } else {
       player.pause();
-      clearInterval(currentTime);
     }
   };
+
+  const playedSeconds = [];
+  let uniquePlayedSeconds;
 
   player.addEventListener("play", () => {
     playerPlaySVG.classList.remove("player__play-svg_is-active");
     playerPauseSVG.classList.add("player__pause-svg_is-active");
+
+    currentTime = setInterval(() => {
+      const time = Math.round(player.currentTime);
+      const prettyTime = timePrettier(time);
+
+      playerCurrentTime.innerHTML = prettyTime;
+      playerProgress.style.width = time / (player.duration / 100) + "%";
+
+      playedSeconds.push(time);
+      uniquePlayedSeconds = [...new Set(playedSeconds)];
+      console.log(uniquePlayedSeconds);
+
+    }, 500);
   });
 
   player.addEventListener("pause", () => {
     playerPlaySVG.classList.add("player__play-svg_is-active");
     playerPauseSVG.classList.remove("player__pause-svg_is-active");
+
+    clearInterval(currentTime);
+  });
+
+  const sendTrigger = document.querySelector('#trigger');
+
+  sendTrigger.addEventListener('click', function() {
+    player.dataset.url
+    const data = new FormData();
+    data.append('action', 'cast-save-stats');
+    data.append('id', player.dataset.id);
+    data.append('stat', uniquePlayedSeconds);
+    data.append('time', Math.round(player.duration));
+    navigator.sendBeacon(player.dataset.url, data);
+  });
+  
+  // SEND STATISTICS
+  window.addEventListener("unload", function() {
   });
 
   playerProgressBar.addEventListener("click", (e) => {
@@ -128,25 +156,14 @@ if (player) {
     console.log(player.volume);
   });
 
-  function getRelativeCoordinatesV(event, referenceElement) {
-    const position = {
-      x: event.pageX,
-      y: event.pageY,
-    };
-
-    const offset = {
-      left: referenceElement.offsetLeft,
-      top: referenceElement.offsetTop,
-    };
-
-    let reference = referenceElement.offsetParent;
-
-    while (reference) {
-      offset.left += reference.offsetLeft;
-      offset.top += reference.offsetTop;
-      reference = reference.offsetParent;
+  function getRelativeCoordinatesV(event) {
+    if (event.target.classList == 'player__volume-value') {
+      let rect = event.target.parentNode.getBoundingClientRect();
+      let y = event.clientY - rect.top;
+      return y;
     }
-
-    return position.y - offset.top;
+    let rect = event.target.getBoundingClientRect();
+    let y = event.clientY - rect.top;
+    return y;
   }
 }
